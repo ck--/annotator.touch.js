@@ -171,7 +171,7 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   #
   # Returns itself.
   showEditor: (annotation) ->
-    @annotator.showEditor(annotation, {})
+    @annotator.onEditNewAnnotation(annotation, {})
     @hideControls()
     this
 
