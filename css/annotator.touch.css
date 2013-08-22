@@ -56,6 +56,7 @@
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 	/* Removes the tap outline on elements that have bound touch events */
 	-webkit-tap-highlight-color: transparent;
+	z-index: 9999999999; /* so that it is not obscured by the summary view */
 }
 
 .annotator-touch-widget-inner {
