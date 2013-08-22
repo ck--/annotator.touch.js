@@ -240,6 +240,7 @@
 	-moz-box-align: center;
 	box-pack: center;
 	box-align: center;
+	z-index: 9999999999; /* so that it is not obscured by the summary view */
 }
 
 .annotator-touch-editor .annotator-touch-widget {
