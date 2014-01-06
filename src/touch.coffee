@@ -21,8 +21,8 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   # Template for the Touch annotator controls.
   template: """
   <div class="annotator-touch-widget annotator-touch-controls annotator-touch-hide">
-    <div class="annotator-touch-widget-inner">
-      <a class="annotator-button annotator-add annotator-focus">""" + _t("Annotate") + """</a>
+    <div class="annotator-touch-widget-inner annotator-touch-adder">
+      <a class="annotator-button annotator-add annotator-focus">""" + _t("More...") + """</a>
       <a class="annotator-button annotator-touch-toggle" data-state="off">""" + _t("Start Annotating") + """</a>
     </div>
   </div>
@@ -356,6 +356,16 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
         # Trigger the main adder handler which handles displaying the editor
         # and triggering the correct events for persistance.
         @annotator.onAdderClick(event)
+
+  # add the touch ranges to the annotation
+  setAnnotationRange:(annotation) ->
+    if @range
+      browserRange = new Annotator.Range.BrowserRange(@range)
+      range = browserRange.normalize().limit(@element[0])
+      if range and not @annotator.isAnnotator(range.commonAncestor)
+        annotation.quote= range.toString()
+        annotation.ranges = [range]
+
 
   # Event callback for tap events on highlights and displays the Viewer.
   # Allows events on anchor elements and those with the
