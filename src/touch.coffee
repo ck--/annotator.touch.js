@@ -22,8 +22,8 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   template: """
   <div class="annotator-touch-widget annotator-touch-controls annotator-touch-hide">
     <div class="annotator-touch-widget-inner annotator-touch-adder">
-      <a class="annotator-button annotator-add annotator-focus">""" + _t("More...") + """</a>
-      <a class="annotator-button annotator-touch-toggle" data-state="off">""" + _t("Start Annotating") + """</a>
+      <a class="annotator-button annotator-add annotator-button-no-icon annotator-focus">""" + _t("More...") + """</a>
+      <a class="annotator-button annotator-button-no-icon annotator-touch-toggle" data-state="off">""" + _t("Start Annotating") + """</a>
     </div>
   </div>
   """
