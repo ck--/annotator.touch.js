@@ -59,6 +59,9 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
     @selection = null
     @document = jQuery(document)
 
+  destroy: ->
+    @pluginDestroy()
+
   # Internal: Updates the plugin after the Annotator has been loaded and
   # attached to the plugin instance. This should be used to register
   # Editor and Viewer fields.
